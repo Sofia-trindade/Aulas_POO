@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+
+    <title>Document</title>
+
+</head>
+
+<body>
+    <script src="carros.js"></script>
+  
+
+</body>
+</html>
+----------------------------------------------
+let carro1 = {
+    modelo: 'Ka',
+    marca: 'Ford',
+    anoDeFabricacao: 2018,
+    preco: 40000,
+    foto: 'ka.jpg'
+};
+
+let carro2 = {
+    modelo: 'Civic',
+    marca: 'Honda',
+    anoDeFabricacao: 2022,
+    preco: 67000,
+    foto: 'civic.jpg'
+};
+
+let carro3 = {
+    modelo: 'Gol',
+    marca: 'VW',
+    anoDeFabricacao: 2020,
+    preco: 55000,
+    foto: 'gol.jpg'
+};
+
+let carro4 = {
+    modelo: 'Corolla',
+    marca: 'Toyota',
+    anoDeFabricacao: 2019,
+    preco: 65000,
+    foto: 'corolla.jpg'
+};
+
+let carro5 = {
+    modelo: 'HB20',
+    marca: 'Hyundai',
+    anoDeFabricacao: 2015,
+    preco: 30000,
+    foto: 'hb20.jpg'
+};
+let carro6 = {
+    modelo: 'Velar',
+    marca: 'Ranger Rouver',
+    anoDeFabricacao: 2023,
+    preco: 625000,
+    foto: 'ranger.jpg'
+};
+
+let carro7 = {
+    modelo: '812 GTS ',
+    marca: 'Ferrari ',
+    anoDeFabricacao: 2023,
+    preco: 6900000,
+    foto: 'ferrari.webp'
+};
+
+
+let listaCarro = [];
+listaCarro.push(carro1, carro2, carro3, carro4, carro5, carro6, carro7);
+
+for (let i = 0; i < listaCarro.length; i++) {
+    document.write(`
+        <div class='card'>
+            <img src='img/${listaCarro[i].foto}'>
+            <h2 class='modelo'>${listaCarro[i].modelo}</h2>
+            <p class='marca'>${listaCarro[i].marca}</p>
+            <p class='anoDeFabricacao'>${listaCarro[i].anoDeFabricacao}</p>
+            <p class='preco'>R$ ${listaCarro[i].preco}</p>
+        </div>
+    `);
+    
+}
+
+----------------------------------------------
+body {
+    display: flex;
+    flex-wrap: wrap; /* quebra de linha de acordo com o tamanho da pág.*/
+
+    gap: 12px; /* espaçamento entre os elementeos filhos*/
+    
+    /* border: solid 2px #ff0000; */
+
+    background-color: rgb(123, 9, 123);
+}
+
+.card {
+    /* border: solid 2px #333333; */
+    border-radius: 8px; /* arredonda as quinas*/
+    box-shadow: 4px 4px 12px black;
+
+    padding: 12px; /* espaçamento entre a borda e o conteúdo interno*/
+
+    background-color: rgb(42, 38, 38);
+    color: rgb(123, 9, 123);
+
+
+}
+
+.card:hover{
+    box-shadow: 4px 4px blueviolet;
+}
+
+.card img{
+    width: 250px; /* largura */
+    height: 180px;
+    object-fit: cover;
+}
+
+.card .marca{
+    color:slategray;
+}
+
+.card .ano{
+    color:slategray;
+}
+
+
+.card .preco {
+    margin-top: 24px;
+    text-align: right;
+
+    font-size: 20pt;
+    font-weight: bold;
+    color: #d45b1a
+}
